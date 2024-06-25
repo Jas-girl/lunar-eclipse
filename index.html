@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar Eclipse</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        .container{
+               width:100vw;
+               background-color: yellow;
+               height:100vh;
+               display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .universe{
+            width:50vw;
+            height:80vh;
+            aspect-ratio: 1;
+            background:url("image.png");
+            border-radius: 25px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            animation:10s change ease-in-out infinite;
+           
+        }
+        @keyframes change {
+            0%{
+                background: url("image.png");
+            }
+            25%{
+                background: url("https://www.wallpapertip.com/wmimgs/238-2384700_wallpaper-clouds-sunset-sky.jpg");
+            }
+            50%{
+                background: url("https://tse1.explicit.bing.net/th?id=OIP.KSVuSfYVUj-Sy-yCujzEEgHaE8&pid=Api&P=0&h=220");
+            }
+            75%{
+                background: url("https://www.wallpapertip.com/wmimgs/238-2384700_wallpaper-clouds-sunset-sky.jpg");
+            }
+            100%{
+                background: url("image.png");
+            }
+        }
+        .sun{
+            width:20vw;
+            height:40vh;
+            border-radius: 50%;
+            background-color: white;
+            aspect-ratio: 1;
+            position: relative;
+            overflow: hidden;
+            &::after{
+                content:"";
+                width:inherit;
+                height:inherit;
+                top:0;
+                left:0;
+                background-color: black;
+                box-shadow: 1px 1px 2px blue;
+                position: absolute;
+                border-radius: 50%;
+                animation:10s moonwalk ease-in-out infinite;
+              
+            }
+           
+        }
+        @keyframes moonwalk {
+                0%{
+                    translate:100%;
+                    scale:1;
+                }
+                50%{
+                    translate:0%;
+                    scale:0.95
+                }
+                100%{
+                    translate:-100%;
+                    scale:0.9
+                }
+                
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="universe">
+            <div class="sun"></div>
+        </div>
+    </div>
+    
+</body>
+</html>
